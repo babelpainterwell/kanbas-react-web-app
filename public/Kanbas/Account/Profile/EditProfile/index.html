@@ -1,0 +1,56 @@
+<h2>Stephen Curry</h2>
+
+<form action="/Kanbas/Account/Profile/screen.html">
+    <label for="name">Name:* <input type="text" name="fullname" id="name"></label>
+    <label for="pron">
+        Pronouns: 
+        <select id="pron" name="prons">
+            <option selected>None</option>
+        </select>
+    </label>
+    <br />
+    <br />
+    <label for="title">Title: <input name="title" type="text" id="title"></label>
+    
+    <h3>Contact</h3>
+    No registered services, you can add some on the <a href="#">settings</a> page.
+
+    <h3>Biography</h3>
+    Faculty, Software Engineer, AI, Space, and historic three pointer shooter. <br />
+    <textarea name="biography" cols="55" rows="5">
+        Faculty, Software Engineer, AI, Space, and historic three pointer shooter.
+    </textarea>
+
+    <h3>Links</h3>
+    <ul>
+        <li>
+            <a href="#">YouTube Links to an external site.</a>
+        </li>
+    </ul>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text" name="title" value="YouTube">
+                </td>
+                <td>
+                    <input type="text" name="url" value="https://www.youtube.com/">
+                </td>
+                <td>
+                    <a href="#">Remove</a>
+                </td>
+            </tr>
+    </table>
+    <Button type="button">Add another link</Button><br />
+
+
+    <button>Cancel Editing</button>
+    <button>Save Profile</button>
+</form>
