@@ -1,133 +1,928 @@
-<table border="1" width="100%">
-    <tr>
-      <td valign="top">
-        <ul>
-          <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-          <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-          <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-          <li><a href="/Kanbas/Calendar/screen.html">Calendar</a></li>
-          <li><a href="/Kanbas/Inbox/screen.html">Inbox</a></li>
-          <li><a href="/Kanbas/History/screen.html">History</a></li>
-          <li><a href="/Kanbas/Studio/screen.html">Studio</a></li>
-          <li><a href="/Kanbas/Commons/screen.html">Commons</a></li>
-          <li><a href="/Kanbas/Help/screen.html">Help</a></li>
-        </ul>
-      </td>
-      <td valign="top">
-        <ul>
-          <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-          <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
-          <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
-          <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-          <li><a href="#">Piazza</a></li>
-          <li><a href="#">Zoom Meetings</a></li>
-          <li><a href="#">Quizzes</a></li>
-          <li><a href="#">People</a></li>
-          <li><a href="#">Panopto Video</a></li>
-          <li><a href="#">Discussions</a></li>
-          <li><a href="#">Announcements</a></li>
-          <li><a href="#">Pages</a></li>
-          <li><a href="#">Files</a></li>
-          <li><a href="#">Rubrics</a></li>
-          <li><a href="#">Outcomes</a></li>
-          <li><a href="#">Collaborations</a></li>
-          <li><a href="#">Syllabus</a></li>
-          <li><a href="/Kanbas/Courses/Settings/CourseDetails/screen.html">Settings</a></li>
-        </ul>
-      </td>
-      <td valign="top">
-        <button>Collapse All</button>
-        <button>View Progress</button>
-        <select>
-          <option>Publish All</option>
-          <option>Publish all items and modules</option>
-          <option>UnPublish</option>
-        </select>
-        <button>+ Module</button>
-        <hr />
-        <ul>
+<html>
+  <head>
+    <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="wd-flex-row-container">
+      <!-- kanbas navigation  -->
+      <div class="wd-bg-color-black d-none d-lg-block">
+        <ul class="wd-kanbas-navigation">
           <li>
-              WEEK0 - INTRO
-              <ul>
-                  <li>
-                      LEARNING OBJECTIVES 
-                      <ul>
-                          <li>
-                              Introduction to the course
-                          </li>
-                          <li>
-                              Learn what is Web Development
-                          </li>
-                          <li>
-                              Creating a development environment 
-                          </li>
-                          <li>
-                              Creating a Web Application 
-                          </li>
-                          <li>
-                              Getting started with the 1st assignment 
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                      READING
-                      <ul>
-                          <li>
-                              Full Stack Developer - Chapter 1 - introduction
-                          </li>
-                          <li>
-                              Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                      SLIDES
-                      <ul>
-                          <li>
-                              <a href="">Introduction to Web Development Links to an external site.</a>
-                          </li>
-                          <li>
-                              <a href="">Creating an HTTP server with Node.js Links to an external site.</a>
-                          </li>
-                          <li>
-                              <a href="">Creating a React Application Links to an external site.</a>
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
+            <a href="#">
+              <img
+                src="/images/neu_logo.png"
+                alt="University Logo"
+                style="height: 45px; width: 55px"
+              />
+            </a>
           </li>
           <li>
-              WEEK1 - HTML
-              <ul>
-                  <li>
-                      LEARNING OBJECTIVES 
-                      <ul>
-                          <li>
-                              Learn how to create user interfaces with HTML
-                          </li>
-                          <li>
-                              Keep working on assignment 1 
-                          </li>
-                          <li>
-                              Deploy the assignment to Netlify
-                          </li>
-                      </ul>
-                  </li>
-                  <li>
-                      READING
-                      <ul>
-                          <li>
-                              Full Stack Developer - Chapter 1 - introduction
-                          </li>
-                          <li>
-                              Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
+            <a href="/Kanbas/Account/Profile/screen.html">
+              <i
+                class="fa fa-user-circle"
+                aria-hidden="true"
+                style="color: white"
+              ></i>
+              Account
+            </a>
           </li>
-          
-      </ul>
-      </td>
-    </tr>
-  </table>
+          <li>
+            <a href="/Kanbas/Dashboard/screen.html">
+              <i class="fa fa-tachometer" aria-hidden="true"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="wd-active">
+            <a href="/Kanbas/Courses/Home/screen.html">
+              <i class="fa fa-book" aria-hidden="true"></i>
+              Courses
+            </a>
+          </li>
+          <li>
+            <a href="/Kanbas/Calendar/screen.html">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              Calendar
+            </a>
+          </li>
+          <li>
+            <a href="/Kanbas/Inbox/screen.html">
+              <i class="fa fa-envelope" aria-hidden="true"></i><br />
+              Inbox
+            </a>
+          </li>
+          <li>
+            <a href="/Kanbas/History/screen.html">
+              <i class="fa fa-history" aria-hidden="true"></i>
+              History
+            </a>
+          </li>
+          <li>
+            <a href="/Kanbas/Studio/screen.html">
+              <i class="fa fa-video" aria-hidden="true"></i>
+              Studio
+            </a>
+          </li>
+          <li>
+            <a href="/Kanbas/Commons/screen.html">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+              Commons
+            </a>
+          </li>
+          <li>
+            <a href="/Kanbas/Help/screen.html">
+              <i class="fa fa-question-circle" aria-hidden="true"></i><br />
+              Help
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- everything other than kanbas navigation -->
+      <div
+        class="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space"
+      >
+        <!-- top nav -->
+        <div>
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+            <ol class="breadcrumb d-flex">
+              <li class="breadcrumb-item">
+                <i
+                  class="fa-solid fa-bars"
+                  aria-hidden="true"
+                  style="color: red"
+                ></i>
+                <a
+                  href="#"
+                  class="wd-no-underline"
+                  style="color: red; margin-left: 10px"
+                  >CS4550.12631.202410</a
+                >
+              </li>
+              <li
+                class="breadcrumb-item active"
+                aria-current="page"
+                style="color: black"
+              >
+                Home
+              </li>
+              <li class="ms-auto align-self-center">
+                <a href="#">
+                  <button type="button" class="btn btn-secondary">
+                    <i class="fa-solid fa-glasses"></i> Student View
+                  </button>
+                </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- below top nav -->
+        <div class="wd-flex-row-container-non-navigation">
+          <!-- second column navigation bar -->
+          <div class="d-none d-lg-block">
+            <ul class="wd-second-column-navigation">
+              <li>
+                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+              </li>
+              <li class="wd-active">
+                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Assignments/screen.html"
+                  >Assignments</a
+                >
+              </li>
+              <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+              <li><a href="#">Piazza</a></li>
+              <li><a href="#">Zoom Meetings</a></li>
+              <li><a href="#">Quizzes</a></li>
+              <li><a href="#">People</a></li>
+              <li><a href="#">Panopto Video</a></li>
+              <li><a href="#">Discussions</a></li>
+              <li><a href="#">Announcements</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Files</a></li>
+              <li><a href="#">Rubrics</a></li>
+              <li><a href="#">Outcomes</a></li>
+              <li><a href="#">Collaborations</a></li>
+              <li><a href="#">Syllabus</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Settings/CourseDetails/screen.html"
+                  >Settings</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- main content -->
+          <div class="wd-flex-grow-1">
+            <!-- grid system  -->
+            <div class="container-fluid">
+              <!-- Modules including top buttons -->
+              <div class="d-block col-12">
+                <div>
+                  <div style="text-align: right">
+                    <button class="btn btn-secondary btn-sm d-inline-block">
+                      Collapse All
+                    </button>
+                    <button class="btn btn-secondary btn-sm d-inline-block">
+                      View Progress
+                    </button>
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-secondary dropdown-toggle btn-sm"
+                        data-bs-toggle="dropdown"
+                        data-bs-display="static"
+                        aria-expanded="false"
+                      >
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #068927"
+                        ></i>
+                        Publish All
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-lg-end">
+                        <li>
+                          <button class="dropdown-item" type="button">
+                            Publish All
+                          </button>
+                        </li>
+                        <li>
+                          <button class="dropdown-item" type="button">
+                            Publish all items and modules
+                          </button>
+                        </li>
+                        <li>
+                          <button class="dropdown-item" type="button">
+                            UnPublish
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                    <button class="btn btn-danger btn-sm d-inline-block">
+                      + Module
+                    </button>
+                    <button class="btn btn-secondary d-inline-block">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                  </div>
+                  <hr />
+
+                  <!-- modules  -->
+                  <div class="list-group mt-3 mb-5">
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action list-group-item-secondary first-child"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center pt-1">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">Week 0 - INTRO</h5>
+                      </div>
+
+                      <div
+                        class="float-end d-inline-flex align-items-center pt-1"
+                      >
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-plus"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">LEARNING OBJECTIVES</h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Introduction to the course
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Learn what is Web Development
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Creating a development environment
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Creating a Web Application
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Getting started with the 1st assignment
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">READING</h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Full Stack Developer - Chapter 1 - Introduction
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Full Stack Developer - Chapter 2 - Creating User
+                          Interfaces With HTML
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">SLIDES</h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-link"
+                          style="color: #0b9d15; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-3" style="color: red">
+                          Introduction to Web Development
+                        </h5>
+                        <i
+                          class="fa-solid fa-window-maximize"
+                          style="color: red; margin-left: 5px"
+                        ></i>
+                      </div>
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-link"
+                          style="color: #0b9d15; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-3" style="color: red">
+                          Creating an HTTP server with Node.js
+                        </h5>
+                        <i
+                          class="fa-solid fa-window-maximize"
+                          style="color: red; margin-left: 5px"
+                        ></i>
+                      </div>
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-link"
+                          style="color: #0b9d15; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-3" style="color: red">
+                          Creating a React Application
+                        </h5>
+                        <i
+                          class="fa-solid fa-window-maximize"
+                          style="color: red; margin-left: 5px"
+                        ></i>
+                      </div>
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="list-group mt-3 mb-5">
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action list-group-item-secondary first-child"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center pt-1">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">Week 1 - HTML</h5>
+                      </div>
+
+                      <div
+                        class="float-end d-inline-flex align-items-center pt-1"
+                      >
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-plus"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">LEARNING OBJECTIVES</h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Learn how to create user interfaces with HTML
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Keep working on assignment 1
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Deploy the assignment to Netlify
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">READING</h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Full Stack Developer - Chapter 1 - Introduction
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-5">
+                          Full Stack Developer - Chapter 2 - Creating User
+                          Interfaces With HTML
+                        </h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2">SLIDES</h5>
+                      </div>
+
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-link"
+                          style="color: #0b9d15; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-3" style="color: red">
+                          Introduction to Large Language Models
+                        </h5>
+                        <i
+                          class="fa-solid fa-window-maximize"
+                          style="color: red; margin-left: 5px"
+                        ></i>
+                      </div>
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                    <a
+                      href="#"
+                      class="list-group-item list-group-item-action"
+                      aria-current="true"
+                    >
+                      <div class="d-inline-flex align-items-center">
+                        <i
+                          class="fa-brands fa-elementor"
+                          style="color: #afb0b1; margin-right: 10px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-link"
+                          style="color: #0b9d15; margin-right: 10px"
+                        ></i>
+                        <h5 class="mb-0 ml-2 ps-3" style="color: red">
+                          Build Another OpenAI From Scratch
+                        </h5>
+                        <i
+                          class="fa-solid fa-window-maximize"
+                          style="color: red; margin-left: 5px"
+                        ></i>
+                      </div>
+                      <div class="float-end d-inline-flex align-items-center">
+                        <i
+                          class="fa-solid fa-circle-check"
+                          style="color: #067104; margin-right: 20px"
+                        ></i>
+                        <i
+                          class="fa-solid fa-ellipsis-vertical"
+                          style="color: #a0a0a2; margin-right: 10px"
+                        ></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

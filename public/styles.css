@@ -1,0 +1,343 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wd-main-css-heading {
+  color: green;
+  background-color: yellow;
+}
+
+.wd-fg-color-black {
+  color: black;
+}
+.wd-fg-color-white {
+  color: white;
+}
+.wd-fg-color-blue {
+  color: #7070ff;
+}
+.wd-fg-color-red {
+  color: #ff7070;
+}
+.wd-fg-color-green {
+  color: green;
+}
+
+.wd-bg-color-yellow {
+  background-color: #ffff07;
+}
+.wd-bg-color-blue {
+  background-color: #7070ff;
+}
+.wd-bg-color-red {
+  background-color: #ff7070;
+}
+.wd-bg-color-green {
+  background-color: green;
+}
+.wd-bg-color-black {
+  background-color: black;
+  /* height: 100vh; */
+}
+
+/* .wd-bg-color-white {
+  background-color: white;
+} */
+
+.wd-flex-row-container {
+  display: flex;
+  flex-direction: row;
+  /* height: 100vh; */
+  margin-right: 50px;
+}
+.wd-flex-grow-1 {
+  flex-grow: 1;
+}
+
+.wd-second-column-navigation {
+  background-color: white;
+  list-style: none;
+  padding: 0px;
+  width: 190px;
+  margin: 0px;
+  /* position: fixed; */
+  /* margin-left: 20px; */
+  /* height: 100vh; */
+}
+.wd-second-column-navigation li {
+  padding-left: 10px;
+  /* margin-bottom: 10px;
+    margin-top: 10px; */
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 30px;
+  text-align: left;
+}
+.wd-second-column-navigation li.wd-active {
+  border-left: 2px solid black;
+}
+.wd-second-column-navigation li.wd-active a {
+  color: black;
+}
+
+.wd-second-column-navigation a {
+  color: red;
+  text-decoration: none;
+}
+
+.wd-float-left {
+  float: left;
+  margin-right: 10px;
+}
+
+.wd-flex-row-container-non-navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  margin-top: 10px;
+  /* left: 85px; */
+  /* height: 100vh; */
+}
+
+.wd-content-flex-container {
+  display: flex;
+  margin-left: 30px;
+  /* overflow-y: scroll; */
+}
+
+.wd-content-float {
+  float: left;
+  margin-right: 10px;
+}
+
+.wd-content-float.wd-flex-2 {
+  flex: 2 0 0%; /* 2 represents flex-grow. It will grow to take up two parts of available space. */
+}
+
+.wd-content-float.wd-flex-1 {
+  flex: 1 0 0%; /* 1 represents flex-grow. It will grow to take up one part of available space. */
+}
+
+.wd-no-underline {
+  text-decoration: none;
+}
+
+.wd-content-item {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.wd-main-content-left-margin {
+  margin-left: 202px;
+}
+
+/* Bootstrap Overrides */
+
+/** Navbar **/
+
+.nav-link {
+  color: red;
+}
+
+.navbar {
+  background-color: white;
+  /* padding-top: 15px; */
+  /* padding-bottom: 15px; */
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.nav {
+  --bs-nav-link-hover-color: black;
+}
+
+nav {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 20px;
+  border-bottom: 0.5px solid gray;
+  margin-top: 5px;
+  /* margin-right: 50px;  */
+}
+
+.nav-mobile {
+  background-color: black;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  height: 70px;
+}
+
+.wd-card {
+  margin-top: 30px; /* Space above the card */
+  margin-bottom: 30px; /* Space below the card */
+  width: 270px;
+}
+
+.btn-secondary {
+  background-color: #e8e8e8; /* Change to your desired background color */
+  color: #000000; /* Change to your desired text color */
+  border: none;
+}
+
+.list-group-item-secondary {
+  background-color: #e8e8e8;
+}
+
+.btn-success {
+  background-color: #90d488; /* Change to your desired background color */
+  color: white; /* Change to your desired text color */
+  border: none;
+}
+
+.list-group {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* .list-group .list-group-item {
+  border-left-color: darkgreen;
+  border-left-width: 5px;
+} */
+
+.list-group .list-group-item:not(:first-child) {
+  border-left-color: darkgreen;
+  border-left-width: 5px;
+}
+
+.list-group-item.first-child {
+  height: 50;
+}
+
+.list-group-item.first-child.assignments {
+  height: 60;
+}
+
+.btn-no-radius {
+  border-radius: 0;
+}
+
+/* .btn-standard {
+  width: 230px; 
+  text-align: left;
+} */
+
+.list-group.course-status-column {
+  border: none;
+}
+
+.list-group-item.course-status-column {
+  border: none !important; /* use !important to ensure override */
+}
+
+.list-group h5 {
+  font-size: 16px;
+}
+/** Dashboard **/
+
+/* .wd-dashboard-grid .col {
+  width: 300px;
+}
+
+.wd-dashboard {
+  width: 300px;
+}
+
+/** Kanbas Navigation **/
+
+/* .wd-kanbas-navigation.list-group {
+  border-radius: 0;
+}
+
+.wd-kanbas-navigation .list-group-item {
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.wd-kanbas-navigation .list-group-item.active {
+  color: black;
+  background-color: white;
+  border-color: white;
+  border: 2px solid black;
+} */
+
+/** Course Navigation **/
+
+/* .wd-course-navigation.list-group {
+  border-radius: 0;
+}
+
+.wd-course-navigation .list-group-item {
+  color: red;
+  background-color: var(--bs-list-group-bg);
+  border: none;
+}
+
+.wd-course-navigation .list-group-item.active {
+  color: black;
+  background-color: white;
+  border-color: white;
+  border-left: 2px solid black;
+}  */
+
+.wd-flex-item-left-margin {
+  margin-left: 105px;
+}
+
+.wd-fixed-top-margin {
+  margin-top: 70px;
+}
+
+.wd-show-bottom-border {
+  border-bottom: 0.5px solid gray;
+}
+
+.wd-overflow-scroll {
+  overflow-y: scroll;
+}
+
+.wd-all-vertical-space {
+  height: 100vh;
+}
+
+.wd-rounded-text {
+  display: inline-block;
+  padding: 5px 10px; /* Adjust for desired padding */
+  border: 1px solid rgb(196, 200, 203); /* Border color */
+  border-radius: 20px; /* Adjust to achieve the desired border roundness */
+  font-size: 12px; /* Adjust font size if needed */
+  background-color: #e8e8e8; /* Background color */
+  margin-right: 2px;
+}
+
+/* .wd-custom-table-bordered td,
+.wd-custom-table-bordered th {
+  border: 1px solid #dee2e6;
+  text-align: center;
+} */
+
+.wd-custom-table-bordered td,
+.wd-custom-table-bordered th {
+  border: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.wd-custom-table-bordered td:first-child,
+.wd-custom-table-bordered th:first-child {
+  border: 1px solid #dee2e6;
+  /* width: 200px; */
+  color: red;
+  text-align: left;
+}
+
+/* .wd-modules-font {
+  font-size: 10px;
+} */

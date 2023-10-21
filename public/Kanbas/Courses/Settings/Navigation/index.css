@@ -1,0 +1,12 @@
+.list-group .list-group-item:not(:first-child) {
+  border-left-color: #dee2e6;
+  border-left-width: 1px;
+}
+
+.list-group-item.first-child {
+  height: 30;
+}
+
+.list-group-item {
+  border: 1px solid #dee2e6;
+}
