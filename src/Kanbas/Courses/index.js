@@ -16,6 +16,7 @@ import CourseBreadCrumb from "./CourseBreadCrumb";
 import MobileNav from "./MobileNav";
 import CourseNavigation from "./CourseNavigation";
 import Settings from "./Settings";
+import MobileCourseNavigation from "./CourseNavigation/MobileCourseNavigation";
 
 function Courses() {
   const { courseId, assignmentId } = useParams();
@@ -60,6 +61,10 @@ function Courses() {
             />
             <Route path="Grades" element={<Grades />} />
             <Route path="Settings" element={<Settings />} />
+            <Route
+              path="MobileCourseNavigation"
+              element={<MobileCourseNavigation />}
+            />
           </Routes>
         </div>
       </div>

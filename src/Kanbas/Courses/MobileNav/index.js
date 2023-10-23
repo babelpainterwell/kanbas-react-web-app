@@ -9,7 +9,7 @@ function MobileNav({ course, screen }) {
     <nav className="navbar fixed-top nav-mobile">
       <div className="container-fluid d-flex align-items-center justify-content-between">
         <div>
-          <Link to="/Kanbas/KanbasNavigation/screen.html">
+          <Link to="/Kanbas/KanbasNavMobile">
             <FaBars style={{ color: "white" }} />
           </Link>
         </div>
@@ -28,7 +28,7 @@ function MobileNav({ course, screen }) {
             </Link>
           </div>
           <div>
-            <Link to="/Kanbas/Courses/CourseNavigation/screen.html">
+            <Link to="#">
               <BsChevronDown style={{ color: "white" }} />
             </Link>
           </div>
