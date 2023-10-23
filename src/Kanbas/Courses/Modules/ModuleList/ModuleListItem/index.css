@@ -1,0 +1,49 @@
+.list-group {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* .list-group .list-group-item {
+    border-left-color: darkgreen;
+    border-left-width: 5px;
+  } */
+
+.list-group .list-group-item:not(:first-child) {
+  border-left-color: darkgreen;
+  border-left-width: 5px;
+}
+
+.list-group-item.first-child {
+  height: 50;
+}
+
+.list-group-item.first-child.assignments {
+  height: 60;
+}
+
+.btn-no-radius {
+  border-radius: 0;
+}
+
+.list-group.course-status-column {
+  border: none;
+}
+
+.list-group-item.course-status-column {
+  border: none !important; /* use !important to ensure override */
+}
+
+.list-group h5 {
+  font-size: 16px;
+}
+
+.list-group .list-group-item:not(:first-child) {
+  border-left-color: darkgreen;
+  border-left-width: 5px;
+}
+
+.list-group-item.first-child {
+  height: 50;
+}

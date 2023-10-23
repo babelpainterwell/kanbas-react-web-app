@@ -1,19 +1,5 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-body {
-  margin: 0;
   padding: 0;
 }
 
@@ -60,8 +46,8 @@ body * {
 }
 
 /* .wd-bg-color-white {
-  background-color: white;
-} */
+    background-color: white;
+  } */
 
 .wd-flex-row-container {
   display: flex;
@@ -86,7 +72,7 @@ body * {
 .wd-second-column-navigation li {
   padding-left: 10px;
   /* margin-bottom: 10px;
-    margin-top: 10px; */
+      margin-top: 10px; */
   padding-top: 8px;
   padding-bottom: 8px;
   padding-right: 30px;
@@ -217,9 +203,9 @@ nav {
 }
 
 /* .list-group .list-group-item {
-  border-left-color: darkgreen;
-  border-left-width: 5px;
-} */
+    border-left-color: darkgreen;
+    border-left-width: 5px;
+  } */
 
 .list-group .list-group-item:not(:first-child) {
   border-left-color: darkgreen;
@@ -239,9 +225,9 @@ nav {
 }
 
 /* .btn-standard {
-  width: 230px; 
-  text-align: left;
-} */
+    width: 230px; 
+    text-align: left;
+  } */
 
 .list-group.course-status-column {
   border: none;
@@ -257,50 +243,50 @@ nav {
 /** Dashboard **/
 
 /* .wd-dashboard-grid .col {
-  width: 300px;
-}
-
-.wd-dashboard {
-  width: 300px;
-}
-
-/** Kanbas Navigation **/
+    width: 300px;
+  }
+  
+  .wd-dashboard {
+    width: 300px;
+  }
+  
+  /** Kanbas Navigation **/
 
 /* .wd-kanbas-navigation.list-group {
-  border-radius: 0;
-}
-
-.wd-kanbas-navigation .list-group-item {
-  color: white;
-  background-color: black;
-  border: none;
-}
-
-.wd-kanbas-navigation .list-group-item.active {
-  color: black;
-  background-color: white;
-  border-color: white;
-  border: 2px solid black;
-} */
+    border-radius: 0;
+  }
+  
+  .wd-kanbas-navigation .list-group-item {
+    color: white;
+    background-color: black;
+    border: none;
+  }
+  
+  .wd-kanbas-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border-color: white;
+    border: 2px solid black;
+  } */
 
 /** Course Navigation **/
 
 /* .wd-course-navigation.list-group {
-  border-radius: 0;
-}
-
-.wd-course-navigation .list-group-item {
-  color: red;
-  background-color: var(--bs-list-group-bg);
-  border: none;
-}
-
-.wd-course-navigation .list-group-item.active {
-  color: black;
-  background-color: white;
-  border-color: white;
-  border-left: 2px solid black;
-}  */
+    border-radius: 0;
+  }
+  
+  .wd-course-navigation .list-group-item {
+    color: red;
+    background-color: var(--bs-list-group-bg);
+    border: none;
+  }
+  
+  .wd-course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border-color: white;
+    border-left: 2px solid black;
+  }  */
 
 .wd-flex-item-left-margin {
   margin-left: 105px;
@@ -333,10 +319,10 @@ nav {
 }
 
 /* .wd-custom-table-bordered td,
-.wd-custom-table-bordered th {
-  border: 1px solid #dee2e6;
-  text-align: center;
-} */
+  .wd-custom-table-bordered th {
+    border: 1px solid #dee2e6;
+    text-align: center;
+  } */
 
 .wd-custom-table-bordered td,
 .wd-custom-table-bordered th {
@@ -353,5 +339,5 @@ nav {
 }
 
 /* .wd-modules-font {
-  font-size: 10px;
-} */
+    font-size: 10px;
+  } */
