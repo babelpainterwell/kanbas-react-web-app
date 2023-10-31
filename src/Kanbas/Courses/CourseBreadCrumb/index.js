@@ -1,12 +1,13 @@
 import React from "react";
 import { BiGlassesAlt } from "react-icons/bi";
 import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import db from "../../Database";
 
 function CourseBreadCrumb({ course, screen }) {
-  const { pathname } = useLocation();
-  const [, , , , , assignmentId] = pathname.split("/");
+  // const { pathname } = useLocation();
+  // const [, , , , , assignmentId] = pathname.split("/");
+  const { assignmentId } = useParams();
 
   const current_assignment = assignmentId
     ? db.assignments.find((assignment) => assignment._id === assignmentId)

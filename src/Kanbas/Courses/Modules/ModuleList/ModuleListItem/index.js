@@ -4,16 +4,17 @@ import "./index.css";
 import { PiDotsSixVerticalBold } from "react-icons/pi";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
-import { IoEllipsisVertical } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { deleteModule, setModule } from "../../modulesReducer";
 
 function ModuleListItem({ module }) {
+  const dispatch = useDispatch();
   const { _id, name, description } = module;
 
   return (
     <div className="list-group mt-3 mb-5">
-      <Link
+      <div
         key={_id}
-        to="#"
         className="list-group-item list-group-item-action list-group-item-secondary first-child ps-1"
         aria-current="true"
       >
@@ -34,12 +35,25 @@ function ModuleListItem({ module }) {
             style={{ color: "#a0a0a2", marginRight: "10px" }}
             size={20}
           />
-          <IoEllipsisVertical
-            style={{ color: "gray", marginRight: "10px" }}
-            size={20}
-          />
+          <button
+            // onClick={(event) => {
+            //   setModule(module);
+            // }}
+            onClick={() => dispatch(setModule(module))}
+            className="btn btn-sm btn-light me-2"
+          >
+            Edit
+          </button>
+
+          <button
+            className="btn btn-danger btn-sm"
+            // onClick={() => deleteModule(module._id)}
+            onClick={() => dispatch(deleteModule(module._id))}
+          >
+            Delete
+          </button>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

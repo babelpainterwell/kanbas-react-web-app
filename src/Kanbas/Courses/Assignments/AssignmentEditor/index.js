@@ -1,20 +1,54 @@
 import React from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
-import db from "../../../Database";
+import { useNavigate, useParams } from "react-router-dom";
+// import db from "../../../Database";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { FaEllipsisV } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setAssignment,
+  updateAssignment,
+  addAssignment,
+} from "../assignmentsReducer";
+import { useLocation } from "react-router-dom";
 
 function AssignmentEditor() {
-  const { courseId, assignmentId } = useParams();
-  // console.log(courseId, assignmentId);
-  const assignment = db.assignments.find(
-    (assignment) => assignment._id === assignmentId
-  );
+  const { courseId } = useParams();
+  const { pathname } = useLocation();
+
+  // const assignments = useSelector(
+  //   (state) => state.assignmentsReducer.assignments
+  // );
+  // const currentAssignment = assignments.find(
+  //   (assignment) => assignment._id === assignmentId
+  // );
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+  // dispatch(setAssignment(currentAssignment));
+  const assignment = useSelector(
+    (state) => state.assignmentsReducer.assignment
+  );
+
+  const handleSave = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    dispatch(updateAssignment(assignment));
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+
+  const handleCancel = () => {
+    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  };
+
+  const handleAdd = () => {
+    dispatch(addAssignment({ ...assignment, course: courseId }));
+    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  };
+
+  let creatingNewAssignment = false;
+  if (pathname.split("/")[5] === "create") {
+    creatingNewAssignment = true;
+  }
+  // console.log(assignmentId);
+  // console.log(creatingNewAssignment + " ");
 
   return (
     <div className="container-fluid">
@@ -36,7 +70,10 @@ function AssignmentEditor() {
         <hr />
 
         {/* Editor goes here */}
-        <form action="/Kanbas/Courses/Assignments" className="w-75">
+        <form
+          onSubmit={creatingNewAssignment ? handleAdd : handleSave}
+          className="w-75"
+        >
           <div className="mb-3">
             <label htmlFor="assignment-name" className="form-label">
               <strong>Assignment Name</strong>
@@ -45,7 +82,12 @@ function AssignmentEditor() {
               type="text"
               className="form-control"
               id="assignment-name"
-              placeholder={assignment.title}
+              value={assignment.title}
+              onChange={(e) =>
+                dispatch(
+                  setAssignment({ ...assignment, title: e.target.value })
+                )
+              }
             />
           </div>
           <div className="mb-3">
@@ -54,11 +96,12 @@ function AssignmentEditor() {
               className="form-control"
               placeholder="Add some description here"
               rows="4"
-              defaultValue="This assignment describes how to install the development
-              environment for creating and working with Web applications we will
-              be developing this semester. We will add new content every week,
-              pushing the code to github source respository, and then deploying
-              the content to a remote server hosted on Netlify"
+              value={assignment.description}
+              onChange={(e) =>
+                dispatch(
+                  setAssignment({ ...assignment, description: e.target.value })
+                )
+              }
             ></textarea>
           </div>
 
@@ -75,151 +118,13 @@ function AssignmentEditor() {
                   type="text"
                   className="form-control ms-2"
                   id="a-points"
-                  placeholder="100"
+                  value={assignment.points}
+                  onChange={(e) =>
+                    dispatch(
+                      setAssignment({ ...assignment, points: e.target.value })
+                    )
+                  }
                 />
-              </div>
-            </div>
-            <div className="row mt-3 mb-3 me-5">
-              <div className="col-3 text-end">
-                <label htmlFor="a-group" className="form-label">
-                  <strong>Assignment Group</strong>
-                </label>
-              </div>
-              <div className="col-9">
-                <select
-                  id="a-group"
-                  className="form-control ms-2"
-                  defaultValue="ASSIGNMENTS"
-                >
-                  <option value="assignments">ASSIGNMENTS</option>
-                  <option value="quiz">QUIZZES</option>
-                  <option value="exam">EXAM</option>
-                </select>
-              </div>
-            </div>
-            <div className="row mt-3 mb-3 me-5">
-              <div className="col-3 text-end">
-                <label htmlFor="a-display" className="form-label">
-                  <strong>Display Grade as</strong>
-                </label>
-              </div>
-              <div className="col-9">
-                <select
-                  id="a-display"
-                  className="form-control ms-2"
-                  defaultValue="Percentage"
-                >
-                  <option value="percentage">Percentage</option>
-                  <option value="number">Number</option>
-                </select>
-                <div className="mt-3 form-check d-inline-block ms-2">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="not-count-grade"
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="not-coount-grade"
-                  >
-                    Do not count this assignment towards the final grade
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div className="row mt-3 mb-3 me-5">
-              <div className="col-3 text-end">
-                <label htmlFor="a-submission-type" className="form-label">
-                  <strong>Submission Type</strong>
-                </label>
-              </div>
-              <div className="col-9">
-                <div
-                  className="pt-3"
-                  style={{
-                    border: "1px solid rgb(196, 200, 203)",
-                    borderRadius: "5px",
-                    padding: "10px",
-                  }}
-                >
-                  <select
-                    id="a-display"
-                    className="form-control ms-2 w-50"
-                    defaultValue="Online"
-                  >
-                    <option value="online">Online</option>
-                    <option value="in-person">In-Person</option>
-                  </select>
-                  <br />
-                  <strong className="ms-2">Online Entry Options</strong>
-                  <br />
-                  <div className="mt-3 mb-3 form-check d-block">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="online-options-text"
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="online-options-text"
-                    >
-                      Text Entry
-                    </label>
-                  </div>
-                  <div className="mb-3 form-check d-block">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="online-options-url"
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="online-options-url"
-                    >
-                      Website URL
-                    </label>
-                  </div>
-                  <div className="mb-3 form-check d-block">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="online-options-media"
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="online-options-media"
-                    >
-                      Media Recordings
-                    </label>
-                  </div>
-                  <div className="mb-3 form-check d-block">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="online-options-annotation"
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="online-options-annotation"
-                    >
-                      Student Annotation
-                    </label>
-                  </div>
-                  <div className="mb-3 form-check d-block">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="online-options-upload"
-                    />
-                    <label
-                      className="form-check-label"
-                      htmlFor="online-options-upload"
-                    >
-                      File Uploads
-                    </label>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -239,21 +144,7 @@ function AssignmentEditor() {
                   }}
                 >
                   <div className="container-fluid">
-                    <div className="row">
-                      <div className="col-12">
-                        <label htmlFor="assign-to" className="form-label">
-                          <b>Assign to</b>
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="assign-to"
-                          placeholder="Everyone"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="row mt-3">
+                    <div className="row mt-1">
                       <div className="col-12">
                         <label htmlFor="due" className="form-label">
                           <b>Due</b>
@@ -262,12 +153,20 @@ function AssignmentEditor() {
                           type="date"
                           className="form-control"
                           id="due"
-                          defaultValue="2023-10-18"
+                          value={assignment.dueDate}
+                          onChange={(e) =>
+                            dispatch(
+                              setAssignment({
+                                ...assignment,
+                                dueDate: e.target.value,
+                              })
+                            )
+                          }
                         />
                       </div>
                     </div>
 
-                    <div className="row mt-3">
+                    <div className="row mt-3 mb-2">
                       <div className="col-6">
                         <label htmlFor="from" className="form-label">
                           <b>Available from</b>
@@ -276,7 +175,15 @@ function AssignmentEditor() {
                           type="date"
                           className="form-control"
                           id="from"
-                          defaultValue="2023-10-15"
+                          value={assignment.startDate}
+                          onChange={(e) =>
+                            dispatch(
+                              setAssignment({
+                                ...assignment,
+                                startDate: e.target.value,
+                              })
+                            )
+                          }
                         />
                       </div>
                       <div className="col-6">
@@ -287,15 +194,20 @@ function AssignmentEditor() {
                           type="date"
                           className="form-control"
                           id="until"
-                          defaultValue="2023-10-28"
+                          value={assignment.endDate}
+                          onChange={(e) =>
+                            dispatch(
+                              setAssignment({
+                                ...assignment,
+                                endDate: e.target.value,
+                              })
+                            )
+                          }
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-                <button type="button" className="btn btn-secondary w-100">
-                  + Add
-                </button>
               </div>
             </div>
           </div>
@@ -314,19 +226,15 @@ function AssignmentEditor() {
             </label>
           </div>
           <div className="float-end d-inline-block">
-            <Link
-              to={`/Kanbas/Courses/${courseId}/Assignments`}
+            <button
+              type="button"
+              onClick={handleCancel}
               className="btn btn-secondary me-2"
             >
               Cancel
-            </Link>
-
-            <button
-              type="submit"
-              onClick={handleSave}
-              className="btn btn-danger"
-            >
-              Save
+            </button>
+            <button type="submit" className="btn btn-danger">
+              {creatingNewAssignment ? "Add" : "Save"}
             </button>
           </div>
           <hr />

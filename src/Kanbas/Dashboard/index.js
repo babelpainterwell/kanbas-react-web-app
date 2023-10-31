@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import db from "../Database";
 import CourseCard from "./CourseCard";
+import "./index.css";
+import CourseForm from "./courseForm";
+import CourseItem from "./courseItem";
+import { useSelector } from "react-redux";
+
 function Dashboard() {
-  const courses = db.courses;
+  // const courses = db.courses;
+  const courses = useSelector((state) => state.coursesReducer.courses);
   return (
     <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space">
       {/* nav bar  */}
@@ -26,13 +32,29 @@ function Dashboard() {
         className="container-fluid"
         style={{ paddingLeft: "50px", paddingRight: "50px", marginTop: "20px" }}
       >
-        <h3>Published Courses ({courses.length})</h3>
+        <div
+          style={{
+            display: "flex",
+          }}
+        >
+          <h3>Published Courses ({courses.length})</h3>
+          {/* <Link to={"/Kanbas/Dashboard/edit"}>
+            <button className="btn btn-secondary ms-3">Edit</button>
+          </Link> */}
+        </div>
+
         <hr />
-        <div className="row d-flex flex-row flex-wrap">
+        {/* <div className="row d-flex flex-row flex-wrap">
           {courses.map((course) => (
             <CourseCard key={course._id} course={course} />
           ))}
-        </div>
+        </div> */}
+        <ul className="list-group">
+          <CourseForm />
+          {courses.map((course) => (
+            <CourseItem course={course} />
+          ))}
+        </ul>
       </div>
     </div>
   );

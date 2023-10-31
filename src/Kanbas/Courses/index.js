@@ -6,7 +6,7 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import db from "../Database";
+// import db from "../Database";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
@@ -17,14 +17,20 @@ import MobileNav from "./MobileNav";
 import CourseNavigation from "./CourseNavigation";
 import Settings from "./Settings";
 import MobileCourseNavigation from "./CourseNavigation/MobileCourseNavigation";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 function Courses() {
-  const { courseId, assignmentId } = useParams();
-  console.log(courseId);
+  // const { courseId, assignmentId } = useParams();
+  const { courseId } = useParams();
+  // console.log(courseId);
   const { pathname } = useLocation();
-  const [empty, kanbas, courses, id, screen] = pathname.split("/");
-  const course = db.courses.find((course) => course._id === courseId);
-  console.log(course);
+  // const [empty, kanbas, courses, id, screen] = pathname.split("/");
+  const screen = pathname.split("/")[4];
+
+  // get courses from redux store
+  const coursesFromStore = useSelector((state) => state.coursesReducer.courses);
+  const course = coursesFromStore.find((course) => course._id === courseId);
+  // console.log(course);
   return (
     <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space">
       {/* top nav visitable starting from lg */}
@@ -55,8 +61,13 @@ function Courses() {
             <Route path="Home" element={<Home />} />
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
-            <Route
+            {/* <Route
               path="Assignments/:assignmentId"
+              element={<AssignmentEditor />}
+            /> */}
+            <Route path="Assignments/create" element={<AssignmentEditor />} />
+            <Route
+              path="Assignments/:assignmentId/edit"
               element={<AssignmentEditor />}
             />
             <Route path="Grades" element={<Grades />} />

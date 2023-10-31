@@ -26,3 +26,9 @@ nav {
   margin-bottom: 10px;
   height: 70px;
 }
+
+.btn-secondary {
+  background-color: #e8e8e8; /* Change to your desired background color */
+  color: #000000; /* Change to your desired text color */
+  border: none;
+}
