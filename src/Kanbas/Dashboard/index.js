@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
-import db from "../Database";
-import CourseCard from "./CourseCard";
 import "./index.css";
 import CourseForm from "./courseForm";
 import CourseItem from "./courseItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setCourses } from "./coursesReducer";
+import { useEffect } from "react";
+import * as client from "./client";
 
 function Dashboard() {
   // const courses = db.courses;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    client.findAllCourses().then((courses) => dispatch(setCourses(courses)));
+  }, []);
+
   const courses = useSelector((state) => state.coursesReducer.courses);
   return (
     <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space">

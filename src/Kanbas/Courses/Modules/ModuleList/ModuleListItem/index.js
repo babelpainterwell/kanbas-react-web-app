@@ -6,10 +6,17 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { deleteModule, setModule } from "../../modulesReducer";
+import * as client from "../../client";
 
 function ModuleListItem({ module }) {
   const dispatch = useDispatch();
   const { _id, name, description } = module;
+
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
 
   return (
     <div className="list-group mt-3 mb-5">
@@ -47,8 +54,7 @@ function ModuleListItem({ module }) {
 
           <button
             className="btn btn-danger btn-sm"
-            // onClick={() => deleteModule(module._id)}
-            onClick={() => dispatch(deleteModule(module._id))}
+            onClick={() => handleDeleteModule(module._id)}
           >
             Delete
           </button>

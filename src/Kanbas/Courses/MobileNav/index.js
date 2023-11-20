@@ -17,7 +17,7 @@ function MobileNav({ course, screen }) {
           className="justify-content-center fs-6 text-center"
           style={{ color: "white" }}
         >
-          {course.number}.{course._id}.{course.startDate.split("-")[0]}
+          {/* {course.number}.{course._id}.{course.startDate.split("-")[0]} */}
           <br />
           {screen}
         </div>

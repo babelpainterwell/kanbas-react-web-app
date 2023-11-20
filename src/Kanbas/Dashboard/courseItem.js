@@ -2,8 +2,17 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteCourse, setCourse } from "./coursesReducer";
 import { Link } from "react-router-dom";
+import * as client from "./client";
+
 function CourseItem({ course }) {
   const dispatch = useDispatch();
+
+  const handleDeleteCourse = (courseId) => {
+    client.deleteCourse(courseId).then((status) => {
+      dispatch(deleteCourse(courseId));
+    });
+  };
+
   return (
     <li
       //   to={`/Kanbas/Courses/${course._id}`}
@@ -29,7 +38,7 @@ function CourseItem({ course }) {
       <div>
         <button
           className="btn btn-danger btn-sm me-3"
-          onClick={() => dispatch(deleteCourse(course._id))}
+          onClick={() => handleDeleteCourse(course._id)}
         >
           Delete
         </button>

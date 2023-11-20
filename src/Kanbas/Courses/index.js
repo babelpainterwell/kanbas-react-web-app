@@ -17,7 +17,10 @@ import MobileNav from "./MobileNav";
 import CourseNavigation from "./CourseNavigation";
 import Settings from "./Settings";
 import MobileCourseNavigation from "./CourseNavigation/MobileCourseNavigation";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+// import { useSelector } from "react-redux/es/hooks/useSelector";
+// import * as client from "../Dashboard/client";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Courses() {
   // const { courseId, assignmentId } = useParams();
@@ -28,9 +31,26 @@ function Courses() {
   const screen = pathname.split("/")[4];
 
   // get courses from redux store
-  const coursesFromStore = useSelector((state) => state.coursesReducer.courses);
-  const course = coursesFromStore.find((course) => course._id === courseId);
-  // console.log(course);
+  // const coursesFromStore = useSelector((state) => state.coursesReducer.courses);
+  // const course = coursesFromStore.find((course) => course._id === courseId);
+
+  // interact with server to get course
+  // const [course, setCourse] = useState({});
+  // useEffect(() => {
+  //   client.findCourseById(courseId).then((course) => setCourse(course));
+  // }, [courseId]);
+
+  const URL = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  };
+
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
+
   return (
     <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space">
       {/* top nav visitable starting from lg */}
@@ -44,7 +64,7 @@ function Courses() {
 
       {/* mobile nav */}
       <div className="d-block d-lg-none">
-        <MobileNav course={course} screen={screen} />
+        <MobileNav course={course} />
       </div>
 
       {/* below top nav till large  */}

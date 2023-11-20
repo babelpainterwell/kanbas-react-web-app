@@ -1,10 +1,23 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCourse, addCourse, updateCourse } from "./coursesReducer";
+import * as client from "./client";
 
 function CourseForm() {
   const { course } = useSelector((state) => state.coursesReducer);
   const dispatch = useDispatch();
+
+  const handleAddCourse = () => {
+    client.createCourse(course).then((course) => {
+      dispatch(addCourse(course));
+    });
+  };
+
+  const handleUpdateCourse = () => {
+    client.updateCourse(course).then((status) => {
+      dispatch(updateCourse(course));
+    });
+  };
   return (
     <li
       className="list-group-item"
@@ -47,20 +60,10 @@ function CourseForm() {
         />
       </div>
       <div>
-        <button
-          className="btn btn-success me-3"
-          onClick={() => {
-            dispatch(addCourse(course));
-            console.log(course);
-          }}
-          // style={{ color: "green" }}
-        >
+        <button className="btn btn-success me-3" onClick={handleAddCourse}>
           Add
         </button>
-        <button
-          className="btn btn-secondary me-3"
-          onClick={() => dispatch(updateCourse(course))}
-        >
+        <button className="btn btn-secondary me-3" onClick={handleUpdateCourse}>
           Update
         </button>
       </div>

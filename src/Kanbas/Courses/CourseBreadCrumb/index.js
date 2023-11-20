@@ -8,6 +8,7 @@ function CourseBreadCrumb({ course, screen }) {
   // const { pathname } = useLocation();
   // const [, , , , , assignmentId] = pathname.split("/");
   const { assignmentId } = useParams();
+  // const screen = "";
 
   const current_assignment = assignmentId
     ? db.assignments.find((assignment) => assignment._id === assignmentId)
@@ -23,11 +24,11 @@ function CourseBreadCrumb({ course, screen }) {
             style={{ color: "red" }}
           ></i>
           <a
-            href="#"
+            href="/#/Kanbas/Dashboard"
             className="wd-no-underline"
             style={{ color: "red", marginLeft: "10px" }}
           >
-            {course.number}.{course._id}.{course.startDate.split("-")[0]}
+            {course.number}.{course._id}
           </a>
         </li>
         {!assignmentId ? (
@@ -53,7 +54,7 @@ function CourseBreadCrumb({ course, screen }) {
           </>
         )}
         <li className="ms-auto align-self-center">
-          <a href="#">
+          <a href="/#/Kanbas/Dashboard">
             <button type="button" className="btn btn-secondary">
               <BiGlassesAlt /> Student View
             </button>
