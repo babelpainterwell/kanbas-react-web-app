@@ -3,11 +3,14 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import "./index.css";
 import Courses from "./Courses";
-import MobileKanbasNavigation from "./KanbasNavigation/MobileKanbasNavigation";
+// import MobileKanbasNavigation from "./KanbasNavigation/MobileKanbasNavigation";
 // import "./index.css";
 import DashboardEdit from "./Dashboard/DashboardEdit";
 import store from "./store";
 import { Provider } from "react-redux";
+import Signin from "../users/signin";
+import Account from "../users/account";
+import UserTable from "../users/table";
 
 function Kanbas() {
   return (
@@ -32,6 +35,10 @@ function Kanbas() {
           <Route path="Studio" element={<h1>Studio</h1>} />
           <Route path="Commons" element={<h1>Commons</h1>} />
           <Route path="Help" element={<h1>Help</h1>} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/admin/users" element={<UserTable />} />
+          <Route path="/account/:id" element={<Account />} />
           {/* <Route path="KanbasNavMobile" element={<MobileKanbasNavigation />} /> */}
         </Routes>
       </div>
