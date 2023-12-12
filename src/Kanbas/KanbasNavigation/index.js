@@ -14,7 +14,7 @@ function KanbasNavigation() {
   const { pathname } = useLocation();
 
   const links = [
-    { name: "Account", icon: <BiUserCircle />, href: "Account" },
+    { name: "Account", icon: <BiUserCircle />, href: "account" },
     { name: "Dashboard", icon: <AiOutlineDashboard />, href: "Dashboard" },
     { name: "Courses", icon: <FaBook />, href: "Courses" },
     { name: "Calendar", icon: <BiCalendarAlt />, href: "Calendar" },

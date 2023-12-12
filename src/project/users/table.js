@@ -1,25 +1,42 @@
 import React, { useState, useEffect } from "react";
-import * as client from "./client";
 import {
-  BsTrash3Fill,
   BsFillCheckCircleFill,
   BsPencil,
+  BsTrash3Fill,
   BsPlusCircleFill,
 } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import * as client from "./client";
+
 function UserTable() {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({
     username: "",
     password: "",
     role: "USER",
-    firstName: "",
-    lastName: "",
   });
+
   const deleteUser = async (user) => {
     try {
       await client.deleteUser(user);
       setUsers(users.filter((u) => u._id !== user._id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const selectUser = async (user) => {
+    try {
+      const u = await client.findUserById(user._id);
+      setUser(u);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const updateUser = async () => {
+    try {
+      await client.updateUser(user);
+      setUsers(users.map((u) => (u._id === user._id ? user : u)));
     } catch (err) {
       console.log(err);
     }
@@ -38,28 +55,13 @@ function UserTable() {
     const users = await client.findAllUsers();
     setUsers(users);
   };
-  const selectUser = async (user) => {
-    try {
-      const u = await client.findUserById(user._id);
-      setUser(u);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const updateUser = async () => {
-    try {
-      const status = await client.updateUser(user);
-      setUsers(users.map((u) => (u._id === user._id ? user : u)));
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   useEffect(() => {
     fetchUsers();
   }, []);
+
   return (
-    <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space">
+    <div>
       <h1>User List</h1>
       <table className="table">
         <thead>
@@ -67,16 +69,23 @@ function UserTable() {
             <th>Username</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Role</th>
+            <th>&nbsp;</th>
           </tr>
           <tr>
             <td>
               <input
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
+                placeholder="password"
+                type="password"
+                className="form-control w-50 float-end"
               />
               <input
                 value={user.username}
                 onChange={(e) => setUser({ ...user, username: e.target.value })}
+                placeholder="username"
+                className="form-control w-50"
               />
             </td>
             <td>
@@ -85,18 +94,21 @@ function UserTable() {
                 onChange={(e) =>
                   setUser({ ...user, firstName: e.target.value })
                 }
+                className="form-control"
               />
             </td>
             <td>
               <input
                 value={user.lastName}
                 onChange={(e) => setUser({ ...user, lastName: e.target.value })}
+                className="form-control"
               />
             </td>
             <td>
               <select
                 value={user.role}
                 onChange={(e) => setUser({ ...user, role: e.target.value })}
+                className="form-control"
               >
                 <option value="USER">User</option>
                 <option value="ADMIN">Admin</option>
@@ -111,29 +123,26 @@ function UserTable() {
               />
               <BsPlusCircleFill
                 onClick={createUser}
-                className="text-success fs-1 text"
+                className="text-primary fs-1 text"
               />
-            </td>
-            <td className="text-nowrap">
-              <button className="btn btn-danger me-2">
-                <BsTrash3Fill onClick={() => deleteUser(user)} />
-              </button>
-              <button className="btn btn-warning me-2">
-                <BsPencil onClick={() => selectUser(user)} />
-              </button>
             </td>
           </tr>
         </thead>
         <tbody>
           {users.map((user) => (
             <tr key={user._id}>
-              <td>
-                <Link to={`/Kanbas/account/${user._id}`}>{user.username}</Link>
-              </td>
-
               <td>{user.username}</td>
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
+              <td>{user.role}</td>
+              <td className="text-nowrap">
+                <button className="btn btn-warning me-2">
+                  <BsPencil onClick={() => selectUser(user)} />
+                </button>
+                <button className="btn btn-danger me-2">
+                  <BsTrash3Fill onClick={() => deleteUser(user)} />
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -141,4 +150,5 @@ function UserTable() {
     </div>
   );
 }
+
 export default UserTable;

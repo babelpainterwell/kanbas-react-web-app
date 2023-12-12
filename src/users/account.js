@@ -21,7 +21,7 @@ function Account() {
   };
   const signout = async () => {
     await client.signout();
-    navigate("/project/signin");
+    navigate("/#/Kanbas/signin");
   };
 
   useEffect(() => {
@@ -30,11 +30,12 @@ function Account() {
     } else {
       fetchAccount();
     }
-  }, []);
+  }, [id]);
 
   return (
-    <div className="w-50">
+    <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space mt-3">
       <h1>Account</h1>
+      <hr />
       {account && (
         <div>
           <input
@@ -73,10 +74,14 @@ function Account() {
           </select>
         </div>
       )}
-      <button onClick={save}>Save</button>
-      <button onClick={signout}>Signout</button>
+      <button className="btn btn-primary me-2" onClick={save}>
+        Save
+      </button>
+      <button className="btn btn-danger ms-2 me-2" onClick={signout}>
+        Signout
+      </button>
 
-      <Link to="/project/admin/users" className="btn btn-warning w-100">
+      <Link to="/Kanbas/admin/users" className="btn btn-warning ms-2">
         Users
       </Link>
     </div>

@@ -11,13 +11,13 @@ function Signup() {
   const signup = async () => {
     try {
       await client.signup(credentials);
-      navigate("/project/account");
+      navigate("/Kanbas/account");
     } catch (err) {
       setError(err.response.data.message);
     }
   };
   return (
-    <div>
+    <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space">
       <h1>Signup</h1>
       {error && <div>{error}</div>}
       <input

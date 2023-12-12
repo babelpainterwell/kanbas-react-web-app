@@ -9,10 +9,10 @@ function Signin() {
   const navigate = useNavigate();
   const signin = async () => {
     await client.signin(credentials);
-    navigate("/project/account");
+    navigate("/#/Kanbas/account");
   };
   return (
-    <div>
+    <div className="wd-flex-grow-1 wd-flex-item-left-margin wd-all-vertical-space">
       <h1>Signin</h1>
       <input
         value={credentials.username}

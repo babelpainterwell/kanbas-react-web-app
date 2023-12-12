@@ -9,6 +9,7 @@ import DashboardEdit from "./Dashboard/DashboardEdit";
 import store from "./store";
 import { Provider } from "react-redux";
 import Signin from "../users/signin";
+import Signup from "../users/signup";
 import Account from "../users/account";
 import UserTable from "../users/table";
 
@@ -24,7 +25,7 @@ function Kanbas() {
 
         <Routes>
           <Route path="/" element={<Navigate to="Dashboard" />} />
-          <Route path="Account" element={<h1>Account</h1>} />
+          {/* <Route path="Account" element={<Navigate to="/Kanbas/account" />} /> */}
           <Route path="Dashboard" element={<Dashboard />} />
           <Route path="Dashboard/edit" element={<DashboardEdit />} />
           <Route path="Courses" element={<Dashboard />} />
@@ -35,10 +36,11 @@ function Kanbas() {
           <Route path="Studio" element={<h1>Studio</h1>} />
           <Route path="Commons" element={<h1>Commons</h1>} />
           <Route path="Help" element={<h1>Help</h1>} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/admin/users" element={<UserTable />} />
-          <Route path="/account/:id" element={<Account />} />
+          <Route path="signin" element={<Signin />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="account" element={<Account />} />
+          <Route path="admin/users" element={<UserTable />} />
+          <Route path="account/:id" element={<Account />} />
           {/* <Route path="KanbasNavMobile" element={<MobileKanbasNavigation />} /> */}
         </Routes>
       </div>
