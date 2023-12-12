@@ -26,7 +26,7 @@ function Account() {
         setAccount(account);
       }
     } catch (err) {
-      navigate("/project/login");
+      navigate("/project/signin");
     }
   };
 
